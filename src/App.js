@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+
+
 function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
@@ -40,7 +42,7 @@ function App() {
             {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
         </div>
-        {data.name != undefined && (
+        {data.name !== undefined && (
           <div className="bottom">
             <div className="feels">
               {data.main ? (
@@ -55,7 +57,9 @@ function App() {
               <p>Humidity</p>
             </div>
             <div className="wind">
-              {data.wind ? <p className="bold">{data.wind.speed.toFixed()} KMh</p> : null}
+              {data.wind ? (
+                <p className="bold">{data.wind.speed.toFixed()} KMh</p>
+              ) : null}
               <p>Wind Speed</p>
             </div>
           </div>
